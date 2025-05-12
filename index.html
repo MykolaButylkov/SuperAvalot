@@ -8,86 +8,56 @@
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background: #fefefe;
-      color: #333;
-    }
-    header {
-      background: #ff6600;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
-    }
-    .hero {
-      background: url('Весёлый переезд в Израиле.png') center/cover no-repeat;
+      background: url('optimized_moving_site.jpg') no-repeat center top;
+      background-size: cover;
       height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
+      color: #002244;
       text-align: center;
-      padding-bottom: 2rem;
-      color: white;
     }
-    .language-switcher {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      display: flex;
-      gap: 0.5rem;
-    }
-    .language-switcher button {
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .cta {
-      background-color: #ff6600;
-      color: white;
-      padding: 1rem 2rem;
-      font-size: 1.2rem;
+    .title {
+      font-size: 2em;
+      margin-top: 20px;
+      font-weight: bold;
+      background-color: rgba(255, 255, 255, 0.7);
+      display: inline-block;
+      padding: 5px 15px;
       border-radius: 10px;
-      margin-top: 1rem;
-      border: none;
-      cursor: pointer;
+    }
+    .animated-text {
+      font-size: 1.5em;
+      margin: 10px auto;
+      background-color: rgba(255, 255, 255, 0.7);
+      display: inline-block;
+      padding: 5px 15px;
+      border-radius: 10px;
+    }
+    .call-button {
+      margin-top: 60vh;
+      display: inline-block;
+      background-color: orange;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
   </style>
-  <script>
-    const translations = {
-      ru: {
-        title: "Весёлый Переезд",
-        subtitle: "по всему Израилю",
-        button: "ПОЛУЧИТЬ ЦЕНУ"
-      },
-      en: {
-        title: "Happy Move",
-        subtitle: "Across Israel",
-        button: "GET A QUOTE"
-      },
-      he: {
-        title: "מעבר שמח",
-        subtitle: "בכל רחבי ישראל",
-        button: "קבל הצעת מחיר"
-      }
-    };
-    function switchLanguage(lang) {
-      document.getElementById('title').innerText = translations[lang].title;
-      document.getElementById('subtitle').innerText = translations[lang].subtitle;
-      document.getElementById('cta-button').innerText = translations[lang].button;
-    }
-  </script>
 </head>
 <body>
-  <div class="language-switcher">
-    <button onclick="switchLanguage('he')">עברית</button>
-    <button onclick="switchLanguage('ru')">Русский</button>
-    <button onclick="switchLanguage('en')">English</button>
-  </div>
-  <section class="hero">
-    <h1 id="title">Весёлый Переезд</h1>
-    <p id="subtitle">по всему Израилю</p>
-    <button class="cta" id="cta-button">ПОЛУЧИТЬ ЦЕНУ</button>
-  </section>
+  <div class="title">Весёлый переезд по всему Израилю</div>
+  <div class="animated-text" id="langText">Весёлый переезд</div>
+
+  <a class="call-button" href="tel:+972548675869">Получить цену</a>
+
+  <script>
+    const textElement = document.getElementById("langText");
+    const texts = ["Весёлый переезд", "Happy Move", "מעבר שמח"];
+    let i = 0;
+    setInterval(() => {
+      i = (i + 1) % texts.length;
+      textElement.textContent = texts[i];
+    }, 2000);
+  </script>
 </body>
 </html>
