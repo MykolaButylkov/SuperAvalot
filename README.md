@@ -1,3 +1,3 @@
 # SuperAvalot
 SuperAvalot
-[Demo Link](https://github.com/MykolaButylkov/SuperAvalot.github.io/)
+[Demo Link](https://github.com/mykolabutylkov.github.io/SuperAvalot.github.io/)
